@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private Polyline createLine(){
         PointCollection polyPoints = new PointCollection(SpatialReferences.getWgs84());
         polyPoints.add(72.9133, 19.1334);
-        polyPoints.add(75.789474,31.013065);
+        polyPoints.add(79.0023 ,10.1692);
 
         Polyline line = new Polyline(polyPoints);
         return line;
@@ -39,11 +39,11 @@ public class MainActivity extends AppCompatActivity {
         GraphicsOverlay graphicsOverlay = new GraphicsOverlay();
         map1.getGraphicsOverlays().add(graphicsOverlay);
 
-        SimpleMarkerSymbol pointSymbol = new SimpleMarkerSymbol(SimpleMarkerSymbol.Style.CIRCLE, Color.BLUE, 20);
+        SimpleMarkerSymbol pointSymbol = new SimpleMarkerSymbol(SimpleMarkerSymbol.Style.TRIANGLE, Color.BLUE, 20);
 
         graphicsOverlay.getGraphics().add(new Graphic(createPoint(), pointSymbol));
 
-        SimpleLineSymbol lineSymbol = new SimpleLineSymbol(SimpleLineSymbol.Style.SOLID, Color.RED, 1);
+        SimpleLineSymbol lineSymbol = new SimpleLineSymbol(SimpleLineSymbol.Style.SOLID, Color.BLUE, 1);
         graphicsOverlay.getGraphics().add(new Graphic(createLine(), lineSymbol));
     }
     @Override
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
         map1 = findViewById(R.id.mapView);
 
-        ArcGISRuntimeEnvironment.setApiKey("AAPKf1663d70118940518cf9b6108d454518erMv2C35wMR0UzV0QhaDlUbd4muD5yv-nf7F2trCM0Vn-zK-KhAP_KCQ76L-S1PH");
+        ArcGISRuntimeEnvironment.setApiKey("AAPKbb2a8f77ffd14fe9a5b98f261a5938bdub_FAryDtoXbCfKPwBYaXw9le4lAPa5piuBYpydU4nbm-HrbkNpQId5IzNXP7O7c");
         ArcGISMap map = new ArcGISMap(BasemapStyle.ARCGIS_TOPOGRAPHIC);
 
         map1.setMap(map);
